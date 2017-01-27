@@ -15,7 +15,7 @@ $(document).ready(function(){
     var $body = $('body');
     $body.html('');
 
-    var $button = $('<button class="button">Newest Tweets</button>');
+    var $button = $('<button class="button"><span class="glyphicon glyphicon-refresh"></span>    Newest Tweets</button>');
     $button.appendTo($body);
 
     // var $nav = $('<nav class="navbar navbar-inverse bg-inverse">' +
@@ -34,7 +34,7 @@ $(document).ready(function(){
     $footer.insertAfter($box);
 
 
-    var $HomeButton = $('<button class="button">Back</button>');
+    var $HomeButton = $('<button class="button"><span class="glyphicon glyphicon-chevron-left"></span>    Back</button>');
 
     // function() {
         for(var index = 0; index < streams.home.length; index++) {
