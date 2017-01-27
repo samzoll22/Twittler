@@ -18,6 +18,8 @@ $(document).ready(function(){
     var $box = $('<div class=box></div>');
     $box.insertAfter($button);
 
+    var $HomeButton = $('<button class="button">Back</button>');
+
     // var $user = $('<div class="user"></div>');
 
     // var genTweets = function() {
@@ -36,7 +38,7 @@ $(document).ready(function(){
             $user.appendTo($allTweet);
             $date.appendTo($allTweet);
             $tweet.appendTo($allTweet);
-            $allTweet.prependTo($box);
+            $allTweet.appendTo($box);
         }
     // }
 
@@ -63,11 +65,19 @@ $(document).ready(function(){
             $allTweet.prependTo($box);
     }
 
+    var userTweets = function() {
+      var username = node.slice(1, node.length - 2);
+      var userTweetsArr = streams.users[username];
+
+
+    }
+
     $button.on('click', function(){
         //$('body').before(genTweets());
         //remove existing tweets
         // for(var index = 0; index < streams.home.length; index++) {
-        $body.appendTo(genAdditionalTweets());
+
+        $box.appendTo(genAdditionalTweets());
 
 
 
@@ -77,15 +87,118 @@ $(document).ready(function(){
         // $('body').appendTo(genTweets());
     });
 
+    $HomeButton.on('click', function(){
+        location.reload();
+    })
+
+
+
+    // var displayTweets = function(tweets) {
+    //     var $tweetDisplay = $('.tweet-display');
+    //     $tweetDisplay.html('')
+    // };
+
+    // var refreshFeed = function() {
+    //     $('.refresh-button').text('Refresh Feed');
+    //     displayTweets(streams.home);
+    // };
+
+    // var displayUserTweets = function(user) {
+    //     $('.refresh-button').text('Show Feed');
+    //     displayTweets(streams.users[user]);
+    // };
+
+
+
+
     $('.well.allTweet').on('click', function() {
-        console.log('this',this);
-        var node = $(this).find('.user');
-        // node[0];
-        console.log(node.text());
-        // $('div').not('.user').fadeToggle();
-        // $(this).toggleClass('.well.allTweet.user');
+
+        var $body = $('body');
+        $body.html('');
+
+        // var $buttonHome = $('<button class="button">Home</button>');
+        // $buttonHome.appendTo($body);
+
+
+        $HomeButton.appendTo($body);
+
+
+
+
+        var $box = $('<div class=box></div>');
+        $box.insertAfter($HomeButton);
+
+        $box.html('');
+
+        var node = $(this).find('.user').text();
+        var username = node.slice(1, node.length - 2);
+        var userArray = streams.users[username];
+        var userArrayLength = userArray.length;
+        for (var i = 0; i < userArrayLength; i++) {
+            var user = streams.users[username][i].user;
+            var date = streams.users[username][i].created_at;
+            var message = streams.users[username][i].message;
+            var $user = $('<div class="user"></div>');
+            var $tweet = $('<div class="tweet"></div>');
+            var $date = $('<div class="date"></div>');
+            var time = moment(new Date()).format('LTS');
+            var $allTweet = $('<div class="well allTweet"></div>').addClass(user);
+            $user.text('@' + user + ': ' );
+            $tweet.text(message);
+            $date.text(time);
+
+            $tweet.prependTo($allTweet);
+            $date.prependTo($allTweet);
+            $user.prependTo($allTweet);
+            $allTweet.prependTo($box);
+            // $('div').not()
+
+        };
+
     });
 
 
 });
 
+
+// var user = tweet.user;
+// $date.prependTo($box);
+// $tweet.prependTo($box);
+
+// var random = Math.floor(Math.random() * 10)
+// var tweet = streams.home[random];
+// var date = streams.home[random].created_at;
+// var $user = $('<div class="user"></div>');
+// var $tweet = $('<div class="tweet"></div>');
+// var $date = $('<div class="date"></div>');
+// var time = moment(new Date()).format('LTS');
+// var user = tweet.user;
+// var $allTweet = $('<div class="well allTweet"></div>').addClass(user);
+// $user.text('@' + user + ': ' );
+// $tweet.text(message);
+// $date.text(date);
+// $tweet.prependTo($allTweet);
+// $date.prependTo($allTweet);
+// $user.prependTo($allTweet);
+// $date.prependTo($box);
+// $tweet.prependTo($box);
+// $allTweet.prependTo($box);
+//
+
+
+
+
+//
+// console.log(node)
+// console.log("this", this)
+//
+
+// console.log(username);
+//
+// $(this).remove(username).fadeToggle();
+// console.log(streams.users[username]);
+
+// console.log("length",streams.users[username].length);
+// console.log("user 0", streams.users[username][0].user);
+
+// $(this).toggleClass('.well.allTweet.user');
