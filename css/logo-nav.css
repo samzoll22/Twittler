@@ -6,39 +6,27 @@
 
  body {
     align-content: center;
-    text-align: center;
     font-family: ".SF NS Display", "Avenir Next", "Helvetica Neue";
     color: black;
     background-color: black;
+     font-weight: 600;
+     font-size: large;
 }
 
 .well {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    background-image: linear-gradient(0deg, #a7a7a7 70%, #FFFFFF 89%);
 }
 
-.button {
-    background-color:#44c767;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border-radius:10px;
-    border:1px solid #18ab29;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    padding:8px 22px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+.message {
+    text-align: right;
+    font-weight: bold;
 }
-.button:hover {
-    background-color:#5cbf2a;
-}
-.button:active {
-    position:relative;
-    top:1px;
-}
+
+/*.well:hover {*/
+    /*linear-gradient(180deg, #4F364C, #FFFFFF)*/
+/*}*/
 
 .navbar-fixed-top .nav {
     padding: 15px 0;
