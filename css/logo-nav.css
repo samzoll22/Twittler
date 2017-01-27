@@ -1,0 +1,56 @@
+/*
+ * Start Bootstrap - Logo Nav (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+ body {
+    align-content: center;
+    text-align: center;
+    font-family: ".SF NS Display", "Avenir Next", "Helvetica Neue";
+    color: black;
+    background-color: black;
+}
+
+.well {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.button {
+    background-color:#44c767;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:8px 22px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+.button:hover {
+    background-color:#5cbf2a;
+}
+.button:active {
+    position:relative;
+    top:1px;
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+@media(min-width:768px) {
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
